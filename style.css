@@ -132,7 +132,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
+  grid-template-columns: 1fr auto;
   align-items: center;
   gap: 48px;
   width: 100%;
