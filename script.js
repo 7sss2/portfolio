@@ -44,6 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      backToTop.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
+    };
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+    backToTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+    });
+  }
+
   if (reducedMotion) return;
 
   const observer = new IntersectionObserver((entries) => {
