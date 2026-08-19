@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 

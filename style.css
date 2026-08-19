@@ -420,7 +420,6 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   .reveal {
     opacity: 1 !important;
     transform: none !important;
