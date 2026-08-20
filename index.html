@@ -23,7 +23,7 @@
     <nav class="nav" id="nav">
       <a href="#about" class="nav__link">Обо мне</a>
       <a href="#skills" class="nav__link">Навыки</a>
-      <a href="#projects" class="nav__link">Проекты</a>
+      <a href="#projects" class="nav__link">Услуги</a>
       <a href="#contact" class="nav__link">Контакты</a>
     </nav>
 
@@ -47,7 +47,7 @@
           Разрабатываю сайты, локальные сетевые сервисы и AI-решения для бизнеса — от адаптивных лендингов до чат-ботов и корпоративных мессенджеров. Беру вашу задачу и довожу её до готового рабочего решения.
         </p>
         <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">Смотреть работы</a>
+          <a href="#projects" class="btn btn--primary">Смотреть услуги</a>
           <a href="#contact" class="btn btn--ghost">Связаться</a>
         </div>
       </div>
@@ -116,14 +116,19 @@
   <!-- PROJECTS -->
   <section class="section" id="projects">
     <div class="container">
-      <p class="section__eyebrow">Портфолио</p>
-      <h2 class="section__title">Последние работы</h2>
+      <p class="section__eyebrow">Услуги</p>
+      <h2 class="section__title">Чем я занимаюсь</h2>
 
+      <!-- Когда появятся скриншоты проектов: вставить <img class="card__image" src="..." alt="..."> первым элементом внутри .card, перед .card__body -->
       <div class="projects">
         <article class="card">
           <div class="card__body">
             <h3 class="card__title">Локальный мессенджер для команды</h3>
             <p class="card__desc">Корпоративный чат внутри локальной сети без выхода в интернет: переписка, каналы и обмен файлами в реальном времени. Данные не покидают офис.</p>
+          </div>
+          <div class="card__price">
+            <span class="card__price-main">от 200 000 ₸</span>
+            <span class="card__price-usd">≈ $430</span>
           </div>
           <div class="card__tags">
             <span class="tag">Node.js</span>
@@ -137,6 +142,10 @@
             <h3 class="card__title">AI-консультант для бизнеса</h3>
             <p class="card__desc">Чат-бот, который отвечает клиентам круглосуточно, квалифицирует заявки и передаёт горячие лиды менеджеру. Собран на связке OpenAI и n8n.</p>
           </div>
+          <div class="card__price">
+            <span class="card__price-main">от 120 000 ₸</span>
+            <span class="card__price-usd">≈ $260</span>
+          </div>
           <div class="card__tags">
             <span class="tag">OpenAI</span>
             <span class="tag">n8n</span>
@@ -149,6 +158,10 @@
             <h3 class="card__title">Адаптивные лендинги под ключ</h3>
             <p class="card__desc">Посадочные страницы от структуры до запуска: быстрая загрузка, корректный вид на любых экранах и вёрстка, готовая под рекламный трафик.</p>
           </div>
+          <div class="card__price">
+            <span class="card__price-main">от 60 000 ₸</span>
+            <span class="card__price-usd">≈ $130</span>
+          </div>
           <div class="card__tags">
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
@@ -156,6 +169,8 @@
           </div>
         </article>
       </div>
+
+      <p class="projects__note">Итоговая стоимость зависит от объёма задачи — обсудим на консультации. Курс доллара ориентировочный.</p>
     </div>
   </section>
 
@@ -165,8 +180,37 @@
       <p class="section__eyebrow">Контакты</p>
       <h2 class="section__title">Обсудим вашу задачу</h2>
       <p class="contact__text">Опишите, что нужно сделать — отвечу и предложу решение.</p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/spasibo.html" class="form">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="form__hidden" hidden aria-hidden="true">
+          <label>Не заполняйте это поле: <input name="bot-field"></label>
+        </p>
+
+        <div class="form__field">
+          <label class="form__label" for="name">Имя</label>
+          <input class="form__input" type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="contact-info">Контакт для связи (телефон или Telegram)</label>
+          <input class="form__input" type="text" id="contact-info" name="contact" required>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="task">Задача</label>
+          <textarea class="form__textarea" id="task" name="task" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary form__submit">Отправить заявку</button>
+      </form>
+
+      <p class="contact__divider">Или напишите напрямую</p>
+
       <div class="contact__actions">
-        <a href="mailto:ashyngysaa@gmail.com" class="btn btn--primary">ashyngysaa@gmail.com</a>
+        <a href="https://t.me/molodoybel3y" target="_blank" rel="noopener" class="btn btn--primary" aria-label="Написать в Telegram">Telegram</a>
+        <a href="https://wa.me/77067065260" target="_blank" rel="noopener" class="btn btn--ghost" aria-label="Написать в WhatsApp">WhatsApp</a>
+        <a href="mailto:ashyngysaa@gmail.com" class="btn btn--ghost" aria-label="Написать на email">Email</a>
       </div>
     </div>
   </section>
@@ -176,7 +220,10 @@
 <footer class="footer">
   <div class="container footer__inner">
     <span>© <span id="year"></span> Akezhan</span>
-    <a href="mailto:ashyngysaa@gmail.com">ashyngysaa@gmail.com</a>
+    <div class="footer__links">
+      <a href="https://t.me/molodoybel3y" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:ashyngysaa@gmail.com">ashyngysaa@gmail.com</a>
+    </div>
   </div>
 </footer>
 
