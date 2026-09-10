@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealTargets = document.querySelectorAll('.section, .card, .skills__item');
+  const revealTargets = document.querySelectorAll('.section, .card, .skills__item, .work-card');
 
   revealTargets.forEach(el => {
     el.classList.add('reveal');
@@ -55,6 +55,44 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Work detail modal (independent of reduced-motion animation gate below)
+  const workModal = document.getElementById('workModal');
+  const modalContent = document.getElementById('modalContent');
+  const workCards = Array.from(document.querySelectorAll('.work-card'));
+
+  if (workModal && modalContent && workCards.length) {
+    let lastFocused = null;
+
+    const openModal = (key) => {
+      const template = document.getElementById(`work-${key}`);
+      if (!template) return;
+      modalContent.innerHTML = '';
+      modalContent.appendChild(template.content.cloneNode(true));
+      lastFocused = document.activeElement;
+      workModal.hidden = false;
+      document.body.classList.add('modal-open');
+      workModal.querySelector('.modal__close').focus();
+    };
+
+    const closeModal = () => {
+      workModal.hidden = true;
+      document.body.classList.remove('modal-open');
+      if (lastFocused) lastFocused.focus();
+    };
+
+    workCards.forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.work));
+    });
+
+    workModal.querySelectorAll('[data-modal-close]').forEach(el => {
+      el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !workModal.hidden) closeModal();
     });
   }
 

@@ -24,6 +24,7 @@
       <a href="#about" class="nav__link">Обо мне</a>
       <a href="#skills" class="nav__link">Навыки</a>
       <a href="#projects" class="nav__link">Услуги</a>
+      <a href="#works" class="nav__link">Последние работы</a>
       <a href="#contact" class="nav__link">Контакты</a>
     </nav>
 
@@ -168,11 +169,72 @@
             <span class="tag">JavaScript</span>
           </div>
         </article>
+
       </div>
 
       <p class="projects__note">Итоговая стоимость зависит от объёма задачи — обсудим на консультации. Курс доллара ориентировочный.</p>
     </div>
   </section>
+
+  <!-- RECENT WORKS -->
+  <section class="section section--alt" id="works">
+    <div class="container">
+      <p class="section__eyebrow">Портфолио</p>
+      <h2 class="section__title">Последние работы</h2>
+
+      <!-- Когда появятся скриншоты: вставить <img class="work-card__image" src="..." alt="..."> первым элементом внутри .work-card -->
+      <div class="works">
+        <button type="button" class="work-card" data-work="irwr" aria-haspopup="dialog">
+          <div class="work-card__body">
+            <h3 class="work-card__title">IRWR — реестр мировых рекордов</h3>
+            <p class="work-card__desc">Веб-платформа для регистрации и просмотра мировых рекордов.</p>
+          </div>
+          <span class="work-card__more">Подробнее <span aria-hidden="true">→</span></span>
+        </button>
+
+        <button type="button" class="work-card" data-work="shine-matcha" aria-haspopup="dialog">
+          <div class="work-card__body">
+            <h3 class="work-card__title">Shine Matcha Lab</h3>
+            <p class="work-card__desc">Приложение программы лояльности с картами и бонусами.</p>
+          </div>
+          <span class="work-card__more">Подробнее <span aria-hidden="true">→</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work detail content (used by modal, see script.js). TODO: уточнить точные пункты, стек и ссылки у заказчика -->
+  <template id="work-irwr">
+    <p class="work-modal__eyebrow">Веб-платформа</p>
+    <h3 class="work-modal__title">IRWR — реестр мировых рекордов</h3>
+    <p class="work-modal__desc">Платформа для регистрации и публичного просмотра мировых рекордов: участники подают заявки, редакция их проверяет и публикует.</p>
+    <h4 class="work-modal__subtitle">Что сделано</h4>
+    <ul class="work-modal__list">
+      <li>Форма подачи заявки на рекорд с загрузкой подтверждающих материалов</li>
+      <li>Публичный каталог рекордов с карточками и поиском</li>
+      <li>Админ-панель для модерации и публикации заявок</li>
+      <li>Адаптивная вёрстка под мобильные и десктоп</li>
+    </ul>
+    <div class="work-modal__tags">
+      <span class="tag">Веб-платформа</span>
+    </div>
+  </template>
+
+  <template id="work-shine-matcha">
+    <p class="work-modal__eyebrow">Программа лояльности</p>
+    <h3 class="work-modal__title">Shine Matcha Lab</h3>
+    <p class="work-modal__desc">Приложение лояльности для сети: цифровая карта клиента, накопление и списание бонусов.</p>
+    <h4 class="work-modal__subtitle">Что сделано</h4>
+    <ul class="work-modal__list">
+      <li>Цифровая карта клиента с QR-кодом</li>
+      <li>Начисление и списание бонусов за покупки</li>
+      <li>История покупок и баланс в личном кабинете</li>
+      <li>Адаптивный интерфейс для использования с телефона</li>
+    </ul>
+    <div class="work-modal__tags">
+      <span class="tag">Программа лояльности</span>
+    </div>
+  </template>
 
   <!-- CONTACT -->
   <section class="section section--alt" id="contact">
@@ -226,6 +288,18 @@
     </div>
   </div>
 </footer>
+
+<div class="modal" id="workModal" hidden>
+  <div class="modal__overlay" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Подробности о работе">
+    <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"></path>
+      </svg>
+    </button>
+    <div class="modal__content" id="modalContent"></div>
+  </div>
+</div>
 
 <a href="#top" class="back-to-top" id="backToTop" aria-label="Наверх">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
