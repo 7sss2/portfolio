@@ -184,6 +184,14 @@
 
       <!-- Когда появятся скриншоты: вставить <img class="work-card__image" src="..." alt="..."> первым элементом внутри .work-card -->
       <div class="works">
+        <button type="button" class="work-card" data-work="chistosfera" aria-haspopup="dialog">
+          <div class="work-card__body">
+            <h3 class="work-card__title">Чистосфера — премиальный эко-клининг</h3>
+            <p class="work-card__desc">Лендинг с интерактивным калькулятором цен, слайдером До/После и онлайн-заказом.</p>
+          </div>
+          <span class="work-card__more">Подробнее <span aria-hidden="true">→</span></span>
+        </button>
+
         <button type="button" class="work-card" data-work="irwr" aria-haspopup="dialog">
           <div class="work-card__body">
             <h3 class="work-card__title">IRWR — реестр мировых рекордов</h3>
@@ -212,6 +220,27 @@
   </section>
 
   <!-- Work detail content (used by modal, see script.js). TODO: уточнить точные пункты, стек и ссылки у заказчика -->
+  <template id="work-chistosfera">
+    <p class="work-modal__eyebrow">Лендинг &amp; Веб-сервис</p>
+    <h3 class="work-modal__title">Чистосфера — премиальный эко-клининг</h3>
+    <p class="work-modal__desc">Высококонверсионный интерактивный веб-сервис для заказа профессионального клининга квартир, коттеджей и офисов с фиксированным онлайн-расчетом стоимости.</p>
+    <h4 class="work-modal__subtitle">Что сделано</h4>
+    <ul class="work-modal__list">
+      <li>Интерактивный онлайн-калькулятор стоимости с ползунком площади (20–220 м²) и расчетом доп. опций</li>
+      <li>Сплит-слайдер сравнения «До / После» с 4 реальными кейсами уборки</li>
+      <li>Технологический чек-лист контроля качества на 45+ пунктов по СанПиН и HACCP</li>
+      <li>Двухэтапная форма оформления бронирования с промокодами и генерацией квитанции заказа</li>
+      <li>Адаптивная верстка, микроанимации и чистый UI без AI-шаблонов</li>
+    </ul>
+    <div class="work-modal__tags">
+      <span class="tag">Лендинг</span>
+      <span class="tag">Калькулятор</span>
+      <span class="tag">React</span>
+      <span class="tag">TypeScript</span>
+      <span class="tag">Tailwind CSS</span>
+    </div>
+  </template>
+
   <template id="work-irwr">
     <p class="work-modal__eyebrow">Веб-платформа</p>
     <h3 class="work-modal__title">IRWR — реестр мировых рекордов</h3>
